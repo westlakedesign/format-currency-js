@@ -74,6 +74,8 @@
             assertEqual('-$1.202', numberToCurrency('-1.202222', {precision: 3}));
             assertEqual('-$1.206', numberToCurrency('-1.205555', {precision: 3}));
             assertEqual('-$1.200', numberToCurrency('-$1.20', {precision: 3}));
+            assertEqual('$10,000', numberToCurrency('10000.01', {precision: 0}));
+            assertEqual('($10,000)', numberToCurrency('-10000.01', {precision: 0, negativeFormat: "(%u%n)"}));
 
             assertEqual('10.000,20&pound;', numberToCurrency('$10000.2', {format: "%n%u", delimiter: ".", separator: ",", unit: "&pound;"}));
             assertEqual('100.000,20&pound;', numberToCurrency('$100000.2', {format: "%n%u", delimiter: ".", separator: ",", unit: "&pound;"}));
